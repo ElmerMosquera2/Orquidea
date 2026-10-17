@@ -2,17 +2,30 @@
 
 To install dependencies:
 
-```bash
-bun install
-```
-
-To run:
+Para instalar las depencias
 
 ```bash
-bun run dev
+npm install
 ```
 
-This project was created using `bun init` in bun v1.3.14. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Ver antes de crear una version
+
+```bash
+npm run dev
+```
+
+# Crear una version "compilacion"
+
+```bash
+npm run build
+```
+
+# Desplegar la version compilada actual
+
+```bash
+ npx firebase-tools deploy --only hosting
+```
+
 
 ## Proyecto academico en desarrollo
 

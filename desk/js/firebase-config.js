@@ -24,7 +24,7 @@ import {
 
 export const firebaseConfig = {
   apiKey: "AIzaSyCKrqF2wk6d2xdd6gUBrHMwua51O6u542k",
-  authDomain: "orquidea-edu.netlify.app",
+  authDomain: "orquidea-edu.firebaseapp.com",
   projectId: "orquidea-edu",
   storageBucket: "orquidea-edu.firebasestorage.app",
   messagingSenderId: "277342316413",

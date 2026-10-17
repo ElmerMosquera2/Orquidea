@@ -19,7 +19,7 @@ const repoRoot = fileURLToPath(new URL('.', import.meta.url))
 
 // Mesa de trabajo y salida, derivadas de la raíz del repo.
 const deskDir = resolve(repoRoot, 'desk')
-const outDir  = resolve(repoRoot, 'build/webs')
+const outDir  = resolve(repoRoot, 'build/web')
 
 export default defineConfig({
   // El servidor de desarrollo y el build operan desde la mesa de trabajo.
@@ -31,7 +31,7 @@ export default defineConfig({
 
   build: {
     // La salida se extrae de desk/ y no contamina el área de desarrollo.
-    outDir: '../build/webs',
+    outDir: '../build/web',
 
     // Purga compilaciones anteriores antes de cada build.
     // Es obligatorio declararlo porque outDir queda fuera de root.
