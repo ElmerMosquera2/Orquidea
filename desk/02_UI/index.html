@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sistema de Diseño y Kit de Componentes UI para la plataforma educativa Orquidea Edu.">
+  <title>Orquidea Edu — Kit de Diseño y Componentes UI</title>
+  <link rel="stylesheet" href="css/orquidea-design-kit.css">
+</head>
+<body>
+  <div class="kit-shell">
+    <!-- Encabezado Institucional con Logo Vertical en Móvil y Horizontal en PC -->
+    <header class="kit-header">
+      <div class="kit-header-inner">
+        <div class="kit-brand-area">
+          <img
+            src="../assets/svg/imaginotipo-vertical.svg"
+            alt="Logo vertical de Orquidea Edu"
+            class="brand-logo-mobile"
+            width="569"
+            height="577"
+          >
+          <img
+            src="../assets/svg/imaginotipo-horizontal.svg"
+            alt="Logo horizontal de Orquidea Edu"
+            class="brand-logo-desktop"
+            width="795"
+            height="309"
+          >
+          <div class="kit-title-group">
+            <span class="kit-eyebrow">Sistema de Diseño Académico</span>
+            <h1 class="kit-main-title">Kit de Diseño UI — Orquidea Edu</h1>
+            <p class="kit-subtitle">
+              Componentes modulares en colores puros, cero frameworks y cero uso de reglas de especificidad forzada.
+            </p>
+          </div>
+        </div>
+
+        <div class="kit-header-actions">
+          <button type="button" id="btn-trigger-toast" class="btn-secondary btn-sm">
+            Probar notificación Toast
+          </button>
+          <button type="button" id="btn-open-modal" class="btn-primary btn-sm">
+            Abrir modal de entrega
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Barra de Filtro por Categoría de Componentes -->
+    <nav class="kit-nav-bar" aria-label="Categorías del kit de diseño">
+      <div class="kit-nav-inner">
+        <button type="button" class="kit-filter-btn is-active" data-kit-filter="all">
+          Todo el Kit
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="foundations">
+          1. Colores y Tipografía
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="actions">
+          2. Botones e Insignias
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="forms">
+          3. Formularios y Controles
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="navigation">
+          4. Navegación y Alertas
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="academic">
+          5. Tarjetas y Tablas Académicas
+        </button>
+        <button type="button" class="kit-filter-btn" data-kit-filter="campus">
+          6. Plantilla Campus (App Shell)
+        </button>
+      </div>
+    </nav>
+
+    <main class="kit-main">
+      <!-- ================================================================
+           1. FUNDAMENTOS: PALETA DE COLORES PUROS Y TIPOGRAFÍA
+           ================================================================ -->
+      <section class="kit-section is-visible" data-kit-section="foundations">
+        <div class="section-header">
+          <span class="section-tag">01 · Fundamentos Visuales</span>
+          <h2 class="section-title">Paleta Institucional de Colores Puros y Tokens CSS</h2>
+          <p class="section-desc">
+            Colores planos extraídos directamente del imaginotipo de Orquidea Edu, sin degradados ni texturas de fondo. Haz clic en cualquier variable para copiarla.
+          </p>
+        </div>
+
+        <div class="kit-grid-4">
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-primary"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Morado Identidad</span>
+              <div class="swatch-meta">
+                <span>#482068</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--purple-primary)">
+                  --purple-primary
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-dark"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Morado Hover</span>
+              <div class="swatch-meta">
+                <span>#34134E</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--purple-dark)">
+                  --purple-dark
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-accent"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Acento Orquídea</span>
+              <div class="swatch-meta">
+                <span>#7A1258</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--purple-accent)">
+                  --purple-accent
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-tint"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Superficie Lavanda Pura</span>
+              <div class="swatch-meta">
+                <span>#F6F2FA</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--purple-tint-bg)">
+                  --purple-tint-bg
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-border"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Borde Institucional</span>
+              <div class="swatch-meta">
+                <span>#D9CCE8</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--purple-tint-border)">
+                  --purple-tint-border
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-success"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Estado Aprobado</span>
+              <div class="swatch-meta">
+                <span>#1B5E20</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--status-success-text)">
+                  --status-success
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-warning"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Entrega Pendiente</span>
+              <div class="swatch-meta">
+                <span>#8D4E00</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--status-warning-text)">
+                  --status-warning
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="swatch-card">
+            <div class="swatch-color swatch-bg-error"></div>
+            <div class="swatch-body">
+              <span class="swatch-name">Alerta / Vencido</span>
+              <div class="swatch-meta">
+                <span>#B71C1C</span>
+                <button type="button" class="copy-token-btn" data-copy-token="var(--status-error-text)">
+                  --status-error
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="kit-panel">
+          <div class="kit-panel-title">
+            <span>Jerarquía Tipográfica Académica</span>
+            <code>--font-sans</code>
+          </div>
+          <div class="type-scale-list">
+            <div class="type-row">
+              <span class="type-sample-h1">H1 · Portal Académico Orquidea Edu (1.85rem / 700)</span>
+              <code>.brand-title / h1</code>
+            </div>
+            <div class="type-row">
+              <span class="type-sample-h2">H2 · Módulo de Evaluación y Seguimiento Curricular (1.45rem / 700)</span>
+              <code>.section-title / h2</code>
+            </div>
+            <div class="type-row">
+              <span class="type-sample-h3">H3 · Unidad 4: Metodología de la Investigación Científica (1.15rem / 700)</span>
+              <code>.course-title / h3</code>
+            </div>
+            <div class="type-row">
+              <span class="type-sample-body">Cuerpo de lectura · Diseñado con alto contraste sobre fondo blanco puro (#FFFFFF) para facilitar sesiones prolongadas de lectura de sílabos, rúbricas y artículos.</span>
+              <code>p / 1rem</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           2. BOTONES, INSIGNIAS Y AVATARES
+           ================================================================ -->
+      <section class="kit-section is-visible" data-kit-section="actions">
+        <div class="section-header">
+          <span class="section-tag">02 · Acciones y Estados</span>
+          <h2 class="section-title">Botones, Insignias de Estado y Avatares</h2>
+          <p class="section-desc">
+            Variantes de acción primaria, secundaria, acento orquídea y estados semánticos con bordes definidos.
+          </p>
+        </div>
+
+        <div class="kit-grid-2">
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Variantes de Botones</span>
+              <code>.btn-*</code>
+            </div>
+            <div class="component-row">
+              <button type="button" class="btn-primary" data-copy-token=".btn-primary">Acción Principal</button>
+              <button type="button" class="btn-secondary" data-copy-token=".btn-secondary">Secundario</button>
+              <button type="button" class="btn-accent" data-copy-token=".btn-accent">Acento Orquídea</button>
+              <button type="button" class="btn-danger" data-copy-token=".btn-danger">Eliminar</button>
+              <button type="button" class="btn-ghost" data-copy-token=".btn-ghost">Acción Sutil</button>
+            </div>
+            <div class="component-row">
+              <button type="button" class="btn-primary btn-sm" data-copy-token=".btn-primary.btn-sm">Pequeño (.btn-sm)</button>
+              <button type="button" class="btn-primary" data-copy-token=".btn-primary">Estándar</button>
+              <button type="button" class="btn-primary is-loading" data-copy-token=".btn-primary.is-loading">
+                <span class="btn-spinner" aria-hidden="true"></span>
+                <span>Guardando...</span>
+              </button>
+              <button type="button" class="btn-primary" disabled>Deshabilitado</button>
+            </div>
+          </div>
+
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Insignias Académicas y Avatares</span>
+              <code>.badge / .avatar</code>
+            </div>
+            <div class="component-row">
+              <span class="badge badge-primary">Semestre 2026-II</span>
+              <span class="badge badge-accent">Docente Titular</span>
+              <span class="badge badge-tint">Créditos: 4</span>
+              <span class="badge badge-success">Aprobado · 4.8</span>
+              <span class="badge badge-warning">Entrega Hoy</span>
+              <span class="badge badge-error">Cerrado</span>
+            </div>
+            <div class="component-row">
+              <span class="avatar" title="Estudiante">LR</span>
+              <span class="avatar avatar-accent" title="Docente">CM</span>
+              <span class="avatar avatar-tint" title="Coordinación">OR</span>
+              <span class="field-hint">Avatares de iniciales con contraste institucional puro.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           3. CONTROLES DE FORMULARIO Y CARGA DE ARCHIVOS
+           ================================================================ -->
+      <section class="kit-section is-visible" data-kit-section="forms">
+        <div class="section-header">
+          <span class="section-tag">03 · Entrada de Datos</span>
+          <h2 class="section-title">Controles de Formulario y Entregas Académicas</h2>
+          <p class="section-desc">
+            Campos consistentes con el login SPA, buscadores, selectores de periodo y estados de validación.
+          </p>
+        </div>
+
+        <div class="kit-grid-2">
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Campos de Texto y Búsqueda</span>
+              <code>.form-input / .form-select</code>
+            </div>
+
+            <div class="field-group">
+              <label for="kit-search-demo" class="field-label">Buscador de asignaturas o recursos</label>
+              <div class="search-input-box">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input
+                  type="search"
+                  id="kit-search-demo"
+                  class="form-input"
+                  placeholder="Buscar por código, asignatura o docente..."
+                >
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="kit-select-demo" class="field-label">Periodo académico activo</label>
+              <select id="kit-select-demo" class="form-select">
+                <option value="2026-2">Periodo 2026-II (En curso)</option>
+                <option value="2026-1">Periodo 2026-I (Finalizado)</option>
+                <option value="2025-2">Periodo 2025-II (Histórico)</option>
+              </select>
+            </div>
+
+            <div class="kit-grid-2">
+              <div class="field-group">
+                <label for="kit-input-ok" class="field-label">Campo validado</label>
+                <input type="text" id="kit-input-ok" class="form-input has-success" value="ORQ-2026-8841" readonly>
+                <span class="field-success-msg">Código de matrícula verificado.</span>
+              </div>
+
+              <div class="field-group">
+                <label for="kit-input-err" class="field-label">Campo con error</label>
+                <input type="text" id="kit-input-err" class="form-input has-error" value="Nota > 5.0" readonly>
+                <span class="field-error-msg">La calificación debe estar entre 0.0 y 5.0.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Zona de Entrega y Selección</span>
+              <code>.file-dropzone / .checkbox-input</code>
+            </div>
+
+            <div class="file-dropzone" id="kit-dropzone-demo" role="button" tabindex="0">
+              <span class="file-dropzone-title">Subir trabajo o informe académico (PDF, DOCX, ZIP)</span>
+              <span class="field-hint">Arrastra tu archivo aquí o haz clic para seleccionarlo desde tu equipo (Máx. 25 MB)</span>
+            </div>
+
+            <div class="control-list">
+              <label class="checkbox-label">
+                <input type="checkbox" class="checkbox-input" checked>
+                <span>Notificar al correo institucional al registrar la entrega</span>
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" class="checkbox-input">
+                <span>Declaración de autoría original y cumplimiento de normas APA</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           4. NAVEGACIÓN, PESTAÑAS SPA Y ALERTAS
+           ================================================================ -->
+      <section class="kit-section is-visible" data-kit-section="navigation">
+        <div class="section-header">
+          <span class="section-tag">04 · Navegación y Feedback</span>
+          <h2 class="section-title">Pestañas SPA, Migas de Pan, Paginación y Alertas</h2>
+          <p class="section-desc">
+            Componentes para moverse entre módulos sin recargar la página y comunicar estados del sistema.
+          </p>
+        </div>
+
+        <div class="kit-grid-2">
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Pestañas SPA, Breadcrumbs y Paginación</span>
+              <code>.spa-tabs / .breadcrumbs</code>
+            </div>
+
+            <ul class="breadcrumbs" aria-label="Ruta de navegación">
+              <li><a href="#campus">Inicio Campus</a></li>
+              <li>/</li>
+              <li><a href="#facultad">Facultad de Ciencias</a></li>
+              <li>/</li>
+              <li class="breadcrumb-current">Biología Molecular</li>
+            </ul>
+
+            <div class="spa-tabs" role="tablist">
+              <button type="button" class="spa-tab-btn is-active" data-demo-tab="contenidos" aria-selected="true">
+                Contenidos
+              </button>
+              <button type="button" class="spa-tab-btn" data-demo-tab="evaluaciones" aria-selected="false">
+                Evaluaciones
+              </button>
+              <button type="button" class="spa-tab-btn" data-demo-tab="foro" aria-selected="false">
+                Foro Docente
+              </button>
+            </div>
+
+            <div class="tab-demo-pane is-active" data-demo-pane="contenidos">
+              <strong>Módulo de Contenidos:</strong> 12 guías de laboratorio disponibles en formato PDF y lecturas semanales habilitadas.
+            </div>
+            <div class="tab-demo-pane" data-demo-pane="evaluaciones">
+              <strong>Módulo de Evaluaciones:</strong> Parcial II programado para el viernes a las 10:00 AM en aula virtual.
+            </div>
+            <div class="tab-demo-pane" data-demo-pane="foro">
+              <strong>Foro Académico:</strong> 5 intervenciones nuevas de estudiantes sobre el proyecto integrador.
+            </div>
+
+            <div class="pagination" aria-label="Paginación de ejemplo">
+              <button type="button" class="page-btn is-active">1</button>
+              <button type="button" class="page-btn">2</button>
+              <button type="button" class="page-btn">3</button>
+              <button type="button" class="page-btn">4</button>
+            </div>
+          </div>
+
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Banners Semánticos de Alerta</span>
+              <code>.alert-banner</code>
+            </div>
+
+            <div class="alert-banner alert-info">
+              <span><strong>Información institucional:</strong> El proceso de inscripción de asignaturas estará abierto hasta el 30 de octubre.</span>
+            </div>
+            <div class="alert-banner alert-success">
+              <span><strong>Entrega confirmada:</strong> Tu ensayo fue recibido exitosamente con radicado #ORQ-9482.</span>
+            </div>
+            <div class="alert-banner alert-warning">
+              <span><strong>Recordatorio académico:</strong> Tienes un cuestionario pendiente que cierra en 4 horas.</span>
+            </div>
+            <div class="alert-banner alert-error">
+              <span><strong>Error de conexión:</strong> No se pudo sincronizar el archivo adjunto con Firebase Storage.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           5. COMPONENTES ACADÉMICOS: CURSOS, KPIS, TABLA Y SÍLABO
+           ================================================================ -->
+      <section id="facultad" class="kit-section is-visible" data-kit-section="academic">
+        <div class="section-header">
+          <span class="section-tag">05 · Módulos Educativos</span>
+          <h2 class="section-title">Tarjetas de Asignatura, KPIs, Calificaciones y Sílabo</h2>
+          <p class="section-desc">
+            Bloques diseñados específicamente para plataformas LMS: seguimiento de progreso, notas y unidades temáticas.
+          </p>
+        </div>
+
+        <!-- KPIs Académicos -->
+        <div class="kit-grid-4">
+          <article class="stat-card">
+            <span class="stat-label">Promedio Acumulado</span>
+            <span class="stat-value">4.52</span>
+            <span class="stat-meta">Escala institucional 0.0 a 5.0</span>
+          </article>
+          <article class="stat-card stat-accent">
+            <span class="stat-label">Créditos Aprobados</span>
+            <span class="stat-value">96 / 140</span>
+            <span class="stat-meta">68.5% del plan de estudios</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Asignaturas Activas</span>
+            <span class="stat-value">6 Cursos</span>
+            <span class="stat-meta">Periodo 2026-II en curso</span>
+          </article>
+          <article class="stat-card stat-accent">
+            <span class="stat-label">Asistencia Semestral</span>
+            <span class="stat-value">98%</span>
+            <span class="stat-meta">Cumplimiento destacado</span>
+          </article>
+        </div>
+
+        <!-- Tarjetas de Cursos -->
+        <div class="kit-grid-3">
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="course-code">BIO-304</span>
+              <span class="course-credits">4 Créditos</span>
+            </div>
+            <div class="course-card-body">
+              <h3 class="course-title">Botánica Sistemática y Orquideología</h3>
+              <p class="course-teacher">Docente: Dra. Clara Inés Montoya</p>
+              <div class="progress-group">
+                <div class="progress-header">
+                  <span>Avance curricular</span>
+                  <span>80%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 80%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="course-card-footer">
+              <span class="badge badge-success">Al día</span>
+              <button type="button" class="btn-secondary btn-sm" data-copy-token=".course-card">Ir al aula</button>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-top top-accent">
+              <span class="course-code">MAT-210</span>
+              <span class="course-credits">3 Créditos</span>
+            </div>
+            <div class="course-card-body">
+              <h3 class="course-title">Estadística Aplicada a la Investigación</h3>
+              <p class="course-teacher">Docente: Mg. Andrés Felipe Ochoa</p>
+              <div class="progress-group">
+                <div class="progress-header">
+                  <span>Avance curricular</span>
+                  <span>55%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill fill-accent" style="width: 55%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="course-card-footer">
+              <span class="badge badge-warning">Taller viernes</span>
+              <button type="button" class="btn-secondary btn-sm" data-copy-token=".course-card">Ir al aula</button>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <div class="course-card-top">
+              <span class="course-code">PED-108</span>
+              <span class="course-credits">3 Créditos</span>
+            </div>
+            <div class="course-card-body">
+              <h3 class="course-title">Diseño Curricular y Ambientes Digitales</h3>
+              <p class="course-teacher">Docente: Dra. Sofía Restrepo</p>
+              <div class="progress-group">
+                <div class="progress-header">
+                  <span>Avance curricular</span>
+                  <span>92%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="course-card-footer">
+              <span class="badge badge-tint">Proyecto final</span>
+              <button type="button" class="btn-secondary btn-sm" data-copy-token=".course-card">Ir al aula</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Tabla de Calificaciones + Acordeón de Sílabo -->
+        <div class="kit-grid-2">
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Tabla de Calificaciones Filtrable</span>
+              <code>.data-table</code>
+            </div>
+
+            <div class="search-input-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input
+                type="search"
+                id="grade-table-search"
+                class="form-input"
+                placeholder="Filtrar por asignatura o estado (ej. Botánica, Aprobado)..."
+              >
+            </div>
+
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Código</th>
+                    <th>Asignatura</th>
+                    <th>Corte</th>
+                    <th>Estado</th>
+                    <th>Nota</th>
+                  </tr>
+                </thead>
+                <tbody id="grade-table-body">
+                  <tr>
+                    <td><code>BIO-304</code></td>
+                    <td>Botánica Sistemática</td>
+                    <td>Parcial II</td>
+                    <td><span class="badge badge-success">Calificado</span></td>
+                    <td><span class="grade-pill">4.8</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>MAT-210</code></td>
+                    <td>Estadística Aplicada</td>
+                    <td>Laboratorio 3</td>
+                    <td><span class="badge badge-warning">En revisión</span></td>
+                    <td><span class="grade-pill">4.3</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>PED-108</code></td>
+                    <td>Diseño Curricular</td>
+                    <td>Ensayo Final</td>
+                    <td><span class="badge badge-success">Calificado</span></td>
+                    <td><span class="grade-pill">4.9</span></td>
+                  </tr>
+                  <tr>
+                    <td><code>HUM-102</code></td>
+                    <td>Ética Académica</td>
+                    <td>Control Lectura</td>
+                    <td><span class="badge badge-tint">Programado</span></td>
+                    <td><span class="grade-pill">--</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="kit-panel">
+            <div class="kit-panel-title">
+              <span>Acordeón de Sílabo por Unidad</span>
+              <code>.accordion-item</code>
+            </div>
+
+            <div class="accordion-list">
+              <div class="accordion-item is-open">
+                <button type="button" class="accordion-trigger" data-accordion-toggle>
+                  <span>Unidad 1 · Fundamentos Taxonómicos y Morfología</span>
+                  <span class="badge badge-primary">Completada</span>
+                </button>
+                <div class="accordion-body">
+                  Incluye guía de estudio ilustrada, clasificación de géneros neotropicales y cuestionario autocalificable sincronizado con Firebase.
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-trigger" data-accordion-toggle>
+                  <span>Unidad 2 · Fisiología Vegetal y Ecosistemas</span>
+                  <span class="badge badge-tint">En curso</span>
+                </button>
+                <div class="accordion-body">
+                  Lecturas obligatorias del capítulo 4, rúbrica de práctica de campo y entrega de informe grupal antes del viernes.
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <button type="button" class="accordion-trigger" data-accordion-toggle>
+                  <span>Unidad 3 · Conservación y Biotecnología</span>
+                  <span class="badge badge-tint">Próxima</span>
+                </button>
+                <div class="accordion-body">
+                  Protocolos de cultivo in vitro, banco de germoplasma y seminario de cierre semestral.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================================
+           6. PLANTILLA DE CAMPUS / APP SHELL COMPLETO
+           ================================================================ -->
+      <section id="campus" class="kit-section is-visible" data-kit-section="campus">
+        <div class="section-header">
+          <span class="section-tag">06 · Estructura de Aplicación</span>
+          <h2 class="section-title">Plantilla Base del Campus (App Shell Responsivo)</h2>
+          <p class="section-desc">
+            Maqueta lista para usar después del inicio de sesión en Firebase: barra superior con logos responsivos, menú lateral académico y área de trabajo limpia.
+          </p>
+        </div>
+
+        <div class="campus-preview-frame">
+          <div class="campus-topbar">
+            <div class="component-row">
+              <img
+                src="../assets/svg/imaginotipo-vertical.svg"
+                alt="Logo Orquidea Edu Móvil"
+                class="brand-logo-mobile"
+                width="569"
+                height="577"
+              >
+              <img
+                src="../assets/svg/imaginotipo-horizontal.svg"
+                alt="Logo Orquidea Edu PC"
+                class="brand-logo-desktop"
+                width="795"
+                height="309"
+              >
+              <span class="badge badge-tint" id="campus-active-module">Mis Asignaturas</span>
+            </div>
+
+            <div class="component-row">
+              <div class="campus-user-pill">
+                <span class="avatar">LR</span>
+                <span>Laura Restrepo · Estudiante</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="campus-body-grid">
+            <aside class="campus-sidebar" aria-label="Menú principal del campus">
+              <button type="button" class="sidebar-nav-btn is-active" data-campus-nav="Mis Asignaturas">
+                <span>Mis Asignaturas</span>
+                <span class="badge badge-tint">6</span>
+              </button>
+              <button type="button" class="sidebar-nav-btn" data-campus-nav="Calendario Académico">
+                <span>Calendario Académico</span>
+              </button>
+              <button type="button" class="sidebar-nav-btn" data-campus-nav="Entregas y Tareas">
+                <span>Entregas y Tareas</span>
+                <span class="badge badge-accent">2</span>
+              </button>
+              <button type="button" class="sidebar-nav-btn" data-campus-nav="Registro de Notas">
+                <span>Registro de Notas</span>
+              </button>
+              <button type="button" class="sidebar-nav-btn" data-campus-nav="Biblioteca Digital">
+                <span>Biblioteca Digital</span>
+              </button>
+            </aside>
+
+            <div class="campus-workspace">
+              <div class="alert-banner alert-info">
+                <span><strong>Bienvenida al Campus Orquidea Edu:</strong> Selecciona cualquier elemento del menú lateral para previsualizar el estado activo del layout.</span>
+              </div>
+
+              <div class="kit-grid-2">
+                <div class="stat-card">
+                  <span class="stat-label">Próxima Clase Sincrónica</span>
+                  <span class="stat-value">10:00 AM</span>
+                  <span class="stat-meta">Botánica Sistemática · Aula Virtual 3</span>
+                </div>
+                <div class="stat-card stat-accent">
+                  <span class="stat-label">Próxima Entrega</span>
+                  <span class="stat-value">18 Oct</span>
+                  <span class="stat-meta">Informe de Laboratorio II (BIO-304)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal de Demostración para Entregas Académicas -->
+  <div class="modal-backdrop" id="kit-demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-demo">
+    <div class="modal-dialog">
+      <header class="modal-header">
+        <h3 id="modal-title-demo">Registrar Entrega Académica</h3>
+        <button type="button" class="modal-close-btn" data-close-modal aria-label="Cerrar modal">&times;</button>
+      </header>
+      <div class="modal-body">
+        <div class="field-group">
+          <label for="modal-course" class="field-label">Asignatura destino</label>
+          <select id="modal-course" class="form-select">
+            <option>BIO-304 · Botánica Sistemática y Orquideología</option>
+            <option>MAT-210 · Estadística Aplicada</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label for="modal-comment" class="field-label">Comentarios para el docente</label>
+          <textarea id="modal-comment" class="form-textarea" placeholder="Escribe una nota sobre tu entrega..."></textarea>
+        </div>
+      </div>
+      <footer class="modal-footer">
+        <button type="button" class="btn-secondary btn-sm" data-close-modal>Cancelar</button>
+        <button type="button" class="btn-primary btn-sm" id="btn-confirm-delivery">Confirmar envío</button>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Región de Notificaciones Toast -->
+  <div class="toast-region" id="kit-toast-region" aria-live="polite"></div>
+
+  <script type="module" src="js/orquidea-design-kit.js"></script>
+</body>
+</html>

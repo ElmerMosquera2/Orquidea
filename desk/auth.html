@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal de acceso académico a la plataforma educativa Orquidea Edu.">
+  <title>Orquidea Edu — Acceso a la Plataforma Educativa</title>
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <main class="auth-layout">
+    <!-- Panel Institucional de Marca (Izquierda en PC / Superior en Móvil) -->
+    <section class="brand-panel" aria-label="Identidad institucional Orquidea Edu">
+      <div class="brand-panel-inner">
+        <div class="brand-logo-container">
+          <!-- Imaginotipo Vertical para dispositivos móviles -->
+          <img
+            src="assets/svg/imaginotipo-vertical.svg"
+            alt="Logo vertical de Orquidea Edu"
+            class="brand-logo brand-logo-mobile"
+            width="569"
+            height="577"
+          >
+          <!-- Imaginotipo Horizontal para PC y pantallas grandes -->
+          <img
+            src="assets/svg/imaginotipo-horizontal.svg"
+            alt="Logo horizontal de Orquidea Edu"
+            class="brand-logo brand-logo-desktop"
+            width="795"
+            height="309"
+          >
+        </div>
+
+        <span class="brand-badge">Plataforma Educativa</span>
+        <h1 class="brand-title">Portal Académico Orquidea Edu</h1>
+        <p class="brand-description">
+          Espacio académico integral para el aprendizaje, gestión de asignaturas, seguimiento de evaluaciones y comunicación docente.
+        </p>
+
+        <div class="academic-pillars">
+          <article class="pillar-item">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h2 class="pillar-heading">Aulas Virtuales y Contenidos</h2>
+              <p class="pillar-text">Consulta guías de estudio, cronogramas y recursos bibliográficos por módulo.</p>
+            </div>
+          </article>
+
+          <article class="pillar-item">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h2 class="pillar-heading">Seguimiento Curricular</h2>
+              <p class="pillar-text">Revisa calificaciones, entregas académicas y retroalimentación en tiempo real.</p>
+            </div>
+          </article>
+
+          <article class="pillar-item">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="pillar-content">
+              <h2 class="pillar-heading">Acceso Institucional Seguro</h2>
+              <p class="pillar-text">Autenticación sincronizada con Firebase Authentication para estudiantes y docentes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- <footer class="brand-footer">
+        <span>Orquidea Edu · Entorno Académico</span>
+        <span class="brand-status-dot">Autenticación Firebase</span>
+      </footer> -->
+    </section>
+
+    <!-- Panel de Formulario SPA (Login, Registro y Recuperar Contraseña) -->
+    <section class="form-panel" aria-label="Formulario de autenticación">
+      <div class="auth-card">
+        <!-- Navegación SPA entre Iniciar Sesión y Crear Cuenta -->
+        <div class="spa-tabs" id="spa-tabs-nav" role="tablist" aria-label="Opciones de acceso">
+          <button
+            type="button"
+            role="tab"
+            id="tab-btn-login"
+            class="spa-tab-btn is-active"
+            aria-selected="true"
+            aria-controls="view-login"
+          >
+            Iniciar sesión
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tab-btn-register"
+            class="spa-tab-btn"
+            aria-selected="false"
+            aria-controls="view-register"
+          >
+            Crear cuenta
+          </button>
+        </div>
+
+        <!-- Banner de Alertas y Respuestas de Firebase -->
+        <div id="auth-alert-banner" class="alert-banner" role="alert" aria-live="polite">
+          <span id="auth-alert-text"></span>
+          <button type="button" id="alert-close-btn" class="alert-close-btn" aria-label="Cerrar notificación">
+            &times;
+          </button>
+        </div>
+
+        <!-- ==============================================================
+             VISTA 1: INICIAR SESIÓN (LOGIN)
+             ============================================================== -->
+        <div id="view-login" class="spa-view is-active" role="tabpanel" aria-labelledby="tab-btn-login">
+          <header class="view-header">
+            <h2 class="view-title">Bienvenido a Orquidea</h2>
+            <p class="view-subtitle">Ingresa tus credenciales para acceder a tus cursos y actividades.</p>
+          </header>
+
+          <form id="form-login" class="auth-form" novalidate>
+            <div class="field-group">
+              <label for="login-email" class="field-label">Correo electrónico</label>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  id="login-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="usuario@orquidea.edu.co"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <span id="login-email-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="login-password" class="field-label">Contraseña</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  class="form-input has-toggle"
+                  placeholder="Ingresa tu contraseña"
+                  autocomplete="current-password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  data-toggle-password="login-password"
+                  aria-label="Mostrar contraseña"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+              <span id="login-password-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="form-aux-row">
+              <label class="checkbox-label" for="login-remember">
+                <input type="checkbox" id="login-remember" class="checkbox-input" checked>
+                <span>Mantener sesión activa</span>
+              </label>
+
+              <button type="button" id="btn-go-recover" class="text-link-btn">
+                ¿Olvidaste tu contraseña?
+              </button>
+            </div>
+
+            <button type="submit" id="btn-login-submit" class="btn-primary">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span>Ingresar al portal</span>
+            </button>
+          </form>
+
+          <div class="auth-divider">o ingresa con tu cuenta institucional</div>
+
+          <button type="button" id="btn-google-auth" class="btn-google">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"></path>
+              <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"></path>
+              <path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.13-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"></path>
+              <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09c.95-2.85 3.6-4.96 6.73-4.96z"></path>
+            </svg>
+            <span>Continuar con Google Académico</span>
+          </button>
+
+          <footer class="view-footer">
+            ¿Eres nuevo en Orquidea Edu?
+            <button type="button" id="link-to-register" class="text-link-btn">
+              Crea tu cuenta académica
+            </button>
+          </footer>
+        </div>
+
+        <!-- ==============================================================
+             VISTA 2: REGISTRO ACADÉMICO
+             ============================================================== -->
+        <div id="view-register" class="spa-view" role="tabpanel" aria-labelledby="tab-btn-register">
+          <header class="view-header">
+            <h2 class="view-title">Registro en Orquidea Edu</h2>
+            <p class="view-subtitle">Completa tus datos para crear tu perfil en la plataforma educativa.</p>
+          </header>
+
+          <form id="form-register" class="auth-form" novalidate>
+            <div class="field-group">
+              <label for="register-name" class="field-label">Nombre completo</label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="register-name"
+                  name="name"
+                  class="form-input"
+                  placeholder="Ej. Laura Sofía Restrepo"
+                  autocomplete="name"
+                  required
+                >
+              </div>
+              <span id="register-name-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="register-role" class="field-label">Perfil académico</label>
+              <div class="input-wrapper">
+                <select id="register-role" name="role" class="form-select" required>
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Docente">Docente / Investigador</option>
+                  <option value="Coordinador">Coordinación Académica</option>
+                </select>
+              </div>
+              <span id="register-role-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="register-email" class="field-label">Correo electrónico</label>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  id="register-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="estudiante@orquidea.edu.co"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <span id="register-email-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="register-password" class="field-label">Contraseña</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="register-password"
+                  name="password"
+                  class="form-input has-toggle"
+                  placeholder="Mínimo 8 caracteres"
+                  autocomplete="new-password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  data-toggle-password="register-password"
+                  aria-label="Mostrar contraseña"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="password-strength" aria-live="polite">
+                <div class="strength-bars">
+                  <span id="strength-bar-1" class="strength-bar"></span>
+                  <span id="strength-bar-2" class="strength-bar"></span>
+                  <span id="strength-bar-3" class="strength-bar"></span>
+                  <span id="strength-bar-4" class="strength-bar"></span>
+                </div>
+                <span id="password-strength-text" class="strength-label">
+                  Mínimo 8 caracteres, letras y números
+                </span>
+              </div>
+              <span id="register-password-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label for="register-password-confirm" class="field-label">Confirmar contraseña</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="register-password-confirm"
+                  name="passwordConfirm"
+                  class="form-input has-toggle"
+                  placeholder="Repite tu contraseña"
+                  autocomplete="new-password"
+                  required
+                >
+                <button
+                  type="button"
+                  class="password-toggle-btn"
+                  data-toggle-password="register-password-confirm"
+                  aria-label="Mostrar confirmación de contraseña"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </button>
+              </div>
+              <span id="register-password-confirm-error" class="field-error" role="status"></span>
+            </div>
+
+            <div class="field-group">
+              <label class="checkbox-label" for="register-terms">
+                <input type="checkbox" id="register-terms" class="checkbox-input" required>
+                <span>Acepto el reglamento académico y la política de tratamiento de datos de Orquidea Edu.</span>
+              </label>
+              <span id="register-terms-error" class="field-error" role="status"></span>
+            </div>
+
+            <button type="submit" id="btn-register-submit" class="btn-primary">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span>Crear cuenta académica</span>
+            </button>
+          </form>
+
+          <footer class="view-footer">
+            ¿Ya tienes una cuenta registrada?
+            <button type="button" id="link-to-login" class="text-link-btn">
+              Inicia sesión aquí
+            </button>
+          </footer>
+        </div>
+
+        <!-- ==============================================================
+             VISTA 3: RECUPERAR CONTRASEÑA (OLVIDÉ MI CONTRASEÑA)
+             ============================================================== -->
+        <div id="view-recover" class="spa-view" role="region" aria-labelledby="recover-title">
+          <header class="view-header">
+            <h2 id="recover-title" class="view-title">Recuperar contraseña</h2>
+            <p class="view-subtitle">
+              Ingresa el correo electrónico de tu cuenta en Orquidea Edu y te enviaremos un enlace de restablecimiento mediante Firebase.
+            </p>
+          </header>
+
+          <form id="form-recover" class="auth-form" novalidate>
+            <div class="field-group">
+              <label for="recover-email" class="field-label">Correo electrónico registrado</label>
+              <div class="input-wrapper">
+                <input
+                  type="email"
+                  id="recover-email"
+                  name="email"
+                  class="form-input"
+                  placeholder="usuario@orquidea.edu.co"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+              <span id="recover-email-error" class="field-error" role="status"></span>
+            </div>
+
+            <button type="submit" id="btn-recover-submit" class="btn-primary">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span>Enviar enlace de recuperación</span>
+            </button>
+
+            <button type="button" id="btn-back-to-login" class="btn-secondary">
+              <span>Volver al inicio de sesión</span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- <div class="firebase-status-bar" aria-live="polite">
+        <span class="firebase-badge">Firebase Auth SPA</span>
+        <span id="firebase-sdk-status">SDK Firebase v10 listo</span>
+      </div> -->
+    </section>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

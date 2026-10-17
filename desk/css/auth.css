@@ -1,0 +1,803 @@
+/* ==========================================================================
+   Orquidea Edu — Hoja de Estilos de Autenticación (SPA)
+   Arquitectura: CSS3 Puro (Sin frameworks, sin uso de la regla important)
+   Paleta: Colores sólidos puros basados en la identidad morada de Orquidea
+   ========================================================================== */
+
+:root {
+  /* Colores institucionales puros extraídos del imaginotipo de Orquidea */
+  --purple-primary: #482068;
+  --purple-dark: #34134E;
+  --purple-deeper: #240B38;
+  --purple-accent: #7A1258;
+  --purple-tint-bg: #F6F2FA;
+  --purple-tint-border: #D9CCE8;
+  --purple-tint-hover: #EDE4F5;
+
+  /* Superficies y neutros puros */
+  --surface-white: #FFFFFF;
+  --surface-subtle: #FAF8FC;
+  --text-primary: #1D1029;
+  --text-secondary: #534363;
+  --text-muted: #786888;
+  --border-neutral: #CFC2DE;
+
+  /* Estados semánticos puros */
+  --status-error-text: #B71C1C;
+  --status-error-bg: #FDECEA;
+  --status-error-border: #F5C2C0;
+
+  --status-success-text: #1B5E20;
+  --status-success-bg: #E8F5E9;
+  --status-success-border: #B9E2BD;
+
+  --status-info-text: #482068;
+  --status-info-bg: #F6F2FA;
+  --status-info-border: #D9CCE8;
+
+  /* Tipografía y espaciado */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --transition-fast: 0.18s ease-in-out;
+}
+
+/* Reset básico y tipografía */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  background-color: var(--surface-white);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   Estructura Principal Responsiva (Mobile-First)
+   ========================================================================== */
+
+.auth-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--surface-white);
+  border-top: 6px solid var(--purple-primary);
+}
+
+/* Panel de Identidad Institucional */
+.brand-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 20px 16px;
+  background-color: var(--surface-white);
+  text-align: center;
+}
+
+.brand-panel-inner {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Contenedor de Logos Responsivos (Vertical en Móvil / Horizontal en PC) */
+.brand-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.brand-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* En móvil (< 900px): se muestra el logo vertical y se oculta el horizontal */
+.brand-logo-mobile {
+  display: block;
+  width: 136px;
+  height: auto;
+}
+
+.brand-logo-desktop {
+  display: none;
+  width: 280px;
+  height: auto;
+}
+
+.brand-badge {
+  display: inline-block;
+  background-color: var(--purple-primary);
+  color: var(--surface-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--purple-primary);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.brand-description {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+}
+
+/* Pilares académicos (ocultos en móvil para priorizar el formulario, visibles en PC) */
+.academic-pillars {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  background-color: var(--purple-tint-bg);
+  border: 1px solid var(--purple-tint-border);
+  border-left: 4px solid var(--purple-primary);
+  border-radius: var(--radius-md);
+}
+
+.pillar-icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: var(--purple-primary);
+  color: var(--surface-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.pillar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pillar-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.pillar-text {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+}
+
+.brand-footer {
+  display: none;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--purple-tint-border);
+  width: 100%;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-status-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: var(--purple-primary);
+}
+
+.brand-status-dot::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--purple-primary);
+}
+
+/* ==========================================================================
+   Panel del Formulario SPA
+   ========================================================================== */
+
+.form-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 20px 36px;
+  background-color: var(--surface-white);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--surface-white);
+  border: 2px solid var(--purple-tint-border);
+  border-radius: var(--radius-lg);
+  padding: 24px 22px;
+}
+
+/* Navegación SPA por pestañas (Login / Registro) */
+.spa-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  background-color: var(--purple-tint-bg);
+  padding: 5px;
+  border-radius: var(--radius-md);
+  margin-bottom: 22px;
+  border: 1px solid var(--purple-tint-border);
+}
+
+.spa-tabs.is-hidden {
+  display: none;
+}
+
+.spa-tab-btn {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.spa-tab-btn:hover {
+  color: var(--purple-primary);
+  background-color: var(--purple-tint-hover);
+}
+
+.spa-tab-btn.is-active {
+  background-color: var(--purple-primary);
+  color: var(--surface-white);
+}
+
+/* Encabezado de cada vista SPA */
+.view-header {
+  margin-bottom: 18px;
+}
+
+.view-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.view-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Alertas globales de estado / Firebase */
+.alert-banner {
+  display: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  margin-bottom: 18px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  border: 1px solid transparent;
+}
+
+.alert-banner.is-visible {
+  display: flex;
+}
+
+.alert-banner.alert-error {
+  background-color: var(--status-error-bg);
+  color: var(--status-error-text);
+  border-color: var(--status-error-border);
+}
+
+.alert-banner.alert-success {
+  background-color: var(--status-success-bg);
+  color: var(--status-success-text);
+  border-color: var(--status-success-border);
+}
+
+.alert-banner.alert-info {
+  background-color: var(--status-info-bg);
+  color: var(--status-info-text);
+  border-color: var(--status-info-border);
+}
+
+.alert-close-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: currentColor;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+/* Vistas SPA (Login, Registro, Recuperar Contraseña) */
+.spa-view {
+  display: none;
+}
+
+.spa-view.is-active {
+  display: block;
+}
+
+/* Campos de formulario */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 11px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background-color: var(--surface-white);
+  border: 1.5px solid var(--border-neutral);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast);
+  outline: none;
+}
+
+.input-wrapper .form-input.has-toggle {
+  padding-right: 44px;
+}
+
+.form-input::placeholder {
+  color: var(--text-muted);
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--purple-primary);
+}
+
+.form-input.has-error,
+.form-select.has-error {
+  border-color: var(--status-error-text);
+  background-color: var(--status-error-bg);
+}
+
+/* Botón mostrar/ocultar contraseña */
+.password-toggle-btn {
+  position: absolute;
+  right: 8px;
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.password-toggle-btn:hover {
+  color: var(--purple-primary);
+  background-color: var(--purple-tint-bg);
+}
+
+.password-toggle-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.field-error {
+  display: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--status-error-text);
+}
+
+.field-error.is-visible {
+  display: block;
+}
+
+/* Medidor de fortaleza de contraseña (Registro) */
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.strength-bars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.strength-bar {
+  height: 5px;
+  border-radius: 3px;
+  background-color: var(--purple-tint-border);
+  transition: background-color var(--transition-fast);
+}
+
+.strength-bar.level-weak {
+  background-color: var(--status-error-text);
+}
+
+.strength-bar.level-medium {
+  background-color: var(--purple-accent);
+}
+
+.strength-bar.level-strong {
+  background-color: var(--purple-primary);
+}
+
+.strength-bar.level-excellent {
+  background-color: var(--status-success-text);
+}
+
+.strength-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Fila auxiliar (Recordarme y Olvidé mi contraseña) */
+.form-aux-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-input {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: var(--purple-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Enlaces de acción dentro del SPA */
+.text-link-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--purple-primary);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  padding: 0;
+}
+
+.text-link-btn:hover {
+  color: var(--purple-dark);
+}
+
+/* Botones principales y secundarios */
+.btn-primary {
+  appearance: none;
+  border: 2px solid var(--purple-primary);
+  background-color: var(--purple-primary);
+  color: var(--surface-white);
+  font-family: var(--font-sans);
+  font-size: 0.96rem;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--purple-dark);
+  border-color: var(--purple-dark);
+}
+
+.btn-primary:active {
+  background-color: var(--purple-deeper);
+  border-color: var(--purple-deeper);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  appearance: none;
+  border: 1.5px solid var(--purple-primary);
+  background-color: var(--surface-white);
+  color: var(--purple-primary);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--purple-tint-bg);
+}
+
+/* Indicador de carga en botón */
+.btn-spinner {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--surface-white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: orquidea-spin 0.75s linear infinite;
+}
+
+.btn-primary.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+@keyframes orquidea-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Divisor y acceso con proveedor institucional */
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--purple-tint-border);
+}
+
+.btn-google {
+  width: 100%;
+  appearance: none;
+  border: 1.5px solid var(--border-neutral);
+  background-color: var(--surface-white);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-google:hover {
+  background-color: var(--purple-tint-bg);
+  border-color: var(--purple-primary);
+}
+
+.btn-google svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Pie de cambio de vista dentro de la tarjeta */
+.view-footer {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--purple-tint-border);
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+/* Barra informativa del estado de conexión Firebase */
+.firebase-status-bar {
+  margin-top: 14px;
+  width: 100%;
+  max-width: 440px;
+  padding: 10px 14px;
+  background-color: var(--purple-tint-bg);
+  border: 1px solid var(--purple-tint-border);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.firebase-badge {
+  font-weight: 700;
+  color: var(--purple-primary);
+}
+
+/* ==========================================================================
+   Diseño para PC y Pantallas Grandes (>= 900px)
+   Cambia al Logo Horizontal y activa diseño dividido de dos columnas
+   ========================================================================== */
+
+@media (min-width: 900px) {
+  .auth-layout {
+    flex-direction: row;
+    border-top: none;
+    border-left: 12px solid var(--purple-primary);
+  }
+
+  .brand-panel {
+    flex: 1 1 46%;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 48px 56px;
+    border-right: 2px solid var(--purple-tint-border);
+    text-align: left;
+  }
+
+  .brand-panel-inner {
+    max-width: 500px;
+    align-items: flex-start;
+    margin: auto 0;
+  }
+
+  .brand-logo-container {
+    justify-content: flex-start;
+    margin-bottom: 24px;
+  }
+
+  /* En PC / Pantallas grandes: oculta logo vertical y muestra logo horizontal */
+  .brand-logo-mobile {
+    display: none;
+  }
+
+  .brand-logo-desktop {
+    display: block;
+    width: 310px;
+    height: auto;
+  }
+
+  .brand-title {
+    font-size: 1.85rem;
+    margin-bottom: 10px;
+  }
+
+  .brand-description {
+    font-size: 1rem;
+    max-width: 460px;
+  }
+
+  .academic-pillars {
+    display: flex;
+  }
+
+  .brand-footer {
+    display: flex;
+    max-width: 500px;
+  }
+
+  .form-panel {
+    flex: 1 1 54%;
+    justify-content: center;
+    padding: 48px 40px;
+    background-color: var(--purple-tint-bg);
+  }
+
+  .auth-card {
+    padding: 34px 32px;
+    border-color: var(--purple-primary);
+  }
+
+  .firebase-status-bar {
+    background-color: var(--surface-white);
+  }
+}

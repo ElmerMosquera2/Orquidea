@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orquidea · Cada semestre, una floración</title>
+<meta name="description" content="Orquidea es la plataforma académica de tu institución. Entras con tu correo académico y encuentras tus materias, tus entregas y los foros de tu carrera, semestre por semestre.">
+<link rel="icon" href="assets/svg/isotipo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<!-- Filtro de ruido para el borde líquido de los paneles (concepto-visual.md § 5).
+     Debe existir en el documento para que landing.css lo referencie con url(#liquid). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="liquid">
+    <feTurbulence type="fractalNoise" baseFrequency=".012 .018" numOctaves="2" seed="4" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<header class="site-head" data-open="false">
+  <div class="wrap">
+    <a class="brand-link" href="#main" aria-label="Orquidea · inicio">
+      <img class="brand brand-word" src="assets/svg/logotipo.svg" alt="Orquidea">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="bars" aria-hidden="true"><span></span></span>
+      <span class="sr-only">Menú</span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Principal">
+      <a href="#que-es">Qué es</a>
+      <a href="#hace">Qué hace</a>
+      <a href="#como-se-ve">Cómo se ve</a>
+      <a href="#proposito">Propósito</a>
+      <a class="btn p" href="./auth.html">Entrar con correo académico</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ── Hero ─────────────────────────────────────────────────── -->
+  <section class="hero-wrap">
+    <div class="wrap hero">
+      <div>
+        <span class="eyebrow">Plataforma académica</span>
+        <h1>Cada semestre, una floración.</h1>
+        <p class="lead">Orquidea reúne tus materias, tus entregas y los foros de tu carrera en un solo lugar. Entras con tu correo académico y todo aparece con el nombre y el escudo de tu institución.</p>
+        <div class="btn-row">
+          <a class="btn p" href="./auth.html">Entrar con correo académico</a>
+          <a class="btn s" href="#hace">Ver qué hace</a>
+        </div>
+        <p class="hero-note">Universidades, institutos, tecnologías y técnicas. Se usa desde el celular.</p>
+      </div>
+
+      <div class="app" aria-label="Vista previa de Orquidea">
+        <div class="app-top">
+          <div><strong>Universidad del Valle</strong>Ingeniería de Sistemas · @correounivalle.edu.co</div>
+          <span class="av" aria-hidden="true">LM</span>
+        </div>
+        <div class="app-body">
+          <span class="app-label">Tu semestre</span>
+          <ul class="stem" aria-label="Avance de semestres: cursaste el 1, 2 y 3; vas en el 4; faltan el 5 al 10">
+            <li class="done"><i></i>1</li><li class="done"><i></i>2</li><li class="done"><i></i>3</li>
+            <li class="now"><i></i>4</li><li><i></i>5</li><li><i></i>6</li><li><i></i>7</li><li><i></i>8</li><li><i></i>9</li><li><i></i>10</li>
+          </ul>
+          <span class="app-label">Materias del semestre</span>
+          <div class="cards" style="margin-top:10px">
+            <div class="card"><small>Semestre 4</small><h3>Bases de datos</h3><div class="bar"><b style="width:62%"></b></div></div>
+            <div class="card"><small>Semestre 4</small><h3>Estructuras de datos</h3><div class="bar"><b style="width:40%"></b></div></div>
+            <div class="card"><small>Semestre 4</small><h3>Cálculo integral</h3><div class="bar"><b style="width:78%"></b></div></div>
+          </div>
+          <div class="rows">
+            <div class="row"><span>Taller de modelo relacional<small>Bases de datos · vence el 18 oct</small></span><span class="chip pend">Pendiente</span></div>
+            <div class="row"><span>Informe de árboles AVL<small>Estructuras de datos · entregado</small></span><span class="chip ent">Entregado</span></div>
+            <div class="row"><span>Parcial 1<small>Cálculo integral</small></span><span class="chip cal">4.2</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Qué es ───────────────────────────────────────────────── -->
+  <section id="que-es">
+    <div class="wrap">
+      <span class="eyebrow">Qué es</span>
+      <h2>Una plataforma académica que no se siente fría</h2>
+      <p class="section-intro">Orquidea es el espacio digital de tu institución. Sirve a estudiantes y docentes de universidades, institutos, tecnologías y técnicas, y está pensada para usarse sobre todo desde el celular.</p>
+
+      <div class="trio">
+        <article>
+          <h3>Entras con tu correo</h3>
+          <p>Tu correo académico identifica tu institución y abre su espacio. Sin registros largos ni contraseñas nuevas que recordar.</p>
+        </article>
+        <article>
+          <h3>Ves tu programa completo</h3>
+          <p>Carrera, tecnología o técnica organizada semestre por semestre, con las materias que estás cursando ahora mismo.</p>
+        </article>
+        <article>
+          <h3>Es tuyo mientras dure</h3>
+          <p>Tus entregas, tus calificaciones y tus foros quedan en un solo lugar, ordenados por materia y por semestre.</p>
+        </article>
+      </div>
+
+      <!-- Tallo de semestres -->
+      <div class="stem-demo">
+        <div>
+          <span class="eyebrow">El elemento que la distingue</span>
+          <h3 style="font-size:1.75rem">El tallo de semestres</h3>
+          <p style="margin-top:12px">La carrera es el tallo. Cada semestre es un capullo que se abre cuando lo cursas. Es la primera cosa que ves al entrar, y la única que se anima en toda la plataforma.</p>
+          <ul class="legend">
+            <li><span class="dot done"></span><span><b>Cursado</b><small>Nodo lleno en ciruela. Lo que ya lograste.</small></span></li>
+            <li><span class="dot now"></span><span><b>Aquí estás</b><small>Nodo magenta con halo. El magenta marca dónde estás ahora, y solo eso.</small></span></li>
+            <li><span class="dot"></span><span><b>Por cursar</b><small>Nodo hueco en lila. Lo que falta por abrir.</small></span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="stem" aria-label="Ejemplo del tallo de semestres">
+            <li class="done"><i></i>1</li><li class="done"><i></i>2</li><li class="done"><i></i>3</li><li class="done"><i></i>4</li>
+            <li class="now"><i></i>5</li><li><i></i>6</li><li><i></i>7</li><li><i></i>8</li><li><i></i>9</li><li><i></i>10</li>
+          </ul>
+          <div class="card">
+            <small>Semestre 5</small>
+            <h3>Ingresa de software</h3>
+            <div class="bar"><b style="width:34%"></b></div>
+            <p style="margin-top:12px;font-size:.875rem;color:var(--orchid)">Al completar el semestre, el capullo se abre y el nodo pasa a ciruela.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Qué hace ─────────────────────────────────────────────── -->
+  <section id="hace" class="band-mist">
+    <div class="wrap">
+      <span class="eyebrow">Qué hace</span>
+      <h2>Cuatro cosas, hechas bien</h2>
+      <p class="section-intro">Orquidea no intenta reemplazar a la institución. Ordena lo que ya pasa en ella: las materias, las entregas y la conversación entre compañeros.</p>
+
+      <div class="features">
+        <article class="feature">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <path d="M17 3c4.5 3.4 7 7.6 7 12.2 0 5-3.1 8.3-7 8.3s-7-3.3-7-8.3C10 10.6 12.5 6.4 17 3Z" stroke="#5B2A86" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M17 4.5v19M17 12.5l-4.2-3.6M17 12.5l4.2-3.6" stroke="#9A1B6B" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M17 23.5v7" stroke="#5B2A86" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>Acceso por institución</h3>
+          <p>Tu correo académico te identifica. Abres el espacio de tu institución con su nombre y su escudo, sin crear otra cuenta.</p>
+        </article>
+
+        <article class="feature">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <path d="M4 17h26" stroke="#C8B6DF" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="7" cy="17" r="3.4" fill="#3F1650"/>
+            <circle cx="14" cy="17" r="3.4" fill="#3F1650"/>
+            <circle cx="21" cy="17" r="4.6" fill="#9A1B6B"/>
+            <circle cx="28" cy="17" r="3.4" stroke="#C8B6DF" stroke-width="2"/>
+          </svg>
+          <h3>Programa y semestres</h3>
+          <p>El tallo de semestres arriba. Debajo, las materias del semestre que elegiste, con su avance y sus foros.</p>
+        </article>
+
+        <article class="feature">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <path d="M17 24V8m0 0-5.5 5.5M17 8l5.5 5.5" stroke="#5B2A86" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 21v3.5A2.5 2.5 0 0 0 8.5 27h17a2.5 2.5 0 0 0 2.5-2.5V21" stroke="#9A1B6B" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3>Tareas y entregables</h3>
+          <p>Cada materia con su fecha límite, su estado y su zona para subir archivos. Sabes qué entregar hoy sin preguntar.</p>
+        </article>
+
+        <article class="feature">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true">
+            <path d="M5 9.5A2.5 2.5 0 0 1 7.5 7h13A2.5 2.5 0 0 1 23 9.5v7a2.5 2.5 0 0 1-2.5 2.5H12l-5 4v-4h-.5A2.5 2.5 0 0 1 4 16.5v-7Z" stroke="#5B2A86" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M27 14v7.5a2.5 2.5 0 0 1-2.5 2.5H24v4l-5-4h-3" stroke="#C8B6DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Foros</h3>
+          <p>Cualquier estudiante crea un foro, escribe un tema e invita a su grupo por correo o enlace. Respuestas anidadas a un nivel.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cómo se ve ───────────────────────────────────────────── -->
+  <section id="como-se-ve">
+    <div class="wrap">
+      <span class="eyebrow">Cómo se ve</span>
+      <h2>Contornos antes que sombras</h2>
+      <p class="section-intro">El isotipo está hecho de línea, y la interfaz sigue ese trazo: bordes de 1.5&nbsp;px en lila. La sombra se reserva para menús y modales.</p>
+
+      <div class="two">
+        <div class="forum">
+          <h3>Foros de Bases de datos</h3>
+          <p>Semestre 4 · 12 participantes</p>
+          <div class="post">
+            <div class="who"><span class="av" aria-hidden="true">SR</span>Sara Ríos</div>
+            <p>¿Alguien armó el modelo del taller con la entidad Matrícula separada de Curso? Me genera dudas con la cardinalidad.</p>
+          </div>
+          <div class="post re">
+            <div class="who"><span class="av" aria-hidden="true">DP</span>Diego Peña</div>
+            <p>Sí, la separé. Te comparto mi diagrama en el foro del grupo.</p>
+          </div>
+          <div class="btn-row">
+            <button class="btn p" type="button">Responder</button>
+            <button class="btn s" type="button">Invitar compañeros</button>
+          </div>
+        </div>
+
+        <div class="forum">
+          <h3>Subir entrega</h3>
+          <p>Taller de modelo relacional · vence el 18 oct</p>
+          <div class="drop" style="margin-top:16px">Arrastra tu archivo aquí o <strong>búscalo en tu equipo</strong><small>PDF, DOCX o ZIP · máximo 25 MB</small></div>
+          <div class="field"><label for="c">Comentario para el docente</label><input id="c" placeholder="Opcional"></div>
+          <button class="btn p" type="button">Subir entrega</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Propósito · la realización ───────────────────────────── -->
+  <section id="proposito" class="band-mist">
+    <div class="wrap">
+      <span class="eyebrow">Propósito</span>
+      <h2>Por qué existe Orquidea</h2>
+      <div class="purpose-body">
+        <p>Una carrera no se vive de golpe. Se abre capullo a capullo, semestre tras semestre, y durante ocho o diez años casi nadie enseña el recorrido completo.</p>
+        <p>La mayoría de las herramientas universitarias muestran carpetas, listas y calificaciones sueltas. El estudiante ve lo que debe entregar el viernes y pierde de vista lo que ya logró y lo que le falta. La universidad se siente como una pila de pendientes, no como un camino.</p>
+        <p>Orquidea parte de esa observación. Ordena la vida académica alrededor del recorrido, no alrededor del archivo: el tallo de semestres arriba, lo cursado cerrado, lo actual en magenta y lo que falta en lila. La flor no es un adorno. Es la medida del avance.</p>
+      </div>
+
+      <div class="commitments">
+        <div class="commitment">
+          <h3>Se ve el avance</h3>
+          <p>Cursado, actual y futuro se leen de un vistazo, sin abrir un solo menú.</p>
+        </div>
+        <div class="commitment">
+          <h3>Habla claro</h3>
+          <p>Frases cortas, verbos claros, tuteo. El botón dice lo que va a pasar y la confirmación repite el verbo.</p>
+        </div>
+        <div class="commitment">
+          <h3>Cerca, no corporativa</h3>
+          <p>Una plataforma académica que cuida el detalle y nunca infantiliza a quien la usa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Voz ──────────────────────────────────────────────────── -->
+  <section id="voz">
+    <div class="wrap">
+      <span class="eyebrow">Voz</span>
+      <h2>Cómo habla Orquidea</h2>
+      <p class="section-intro">Escribe como se habla en el salón: directo, sin jerga y sin disculpas.</p>
+
+      <div class="voice">
+        <div>
+          <strong>Botón</strong>
+          Crear foro<br>
+          <small>Confirmación: «Foro creado»</small>
+        </div>
+        <div>
+          <strong>Estado vacío</strong>
+          Aún no hay foros en esta materia. Crea el primero e invita a tu grupo.
+        </div>
+        <div>
+          <strong>Error</strong>
+          El archivo pesa 32 MB. El máximo es 25 MB.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Cierre ───────────────────────────────────────────────── -->
+  <section id="entrar" class="band-mist">
+    <div class="wrap closing">
+      <img class="brand brand-full" src="assets/svg/imaginotipo-vertical.svg" alt="">
+      <h2 style="margin-top:8px">Empieza por tu correo académico</h2>
+      <p>Tu institución ya está dentro. Solo falta que entres.</p>
+      <div class="btn-row">
+        <a class="btn p" href="./auth.html">Entrar con correo académico</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>Orquidea · Proyecto académico en desarrollo. Johan Arrieta y Elmer Mosquera.</p>
+  </div>
+</footer>
+
+<script>
+/* Menú móvil: alterna el panel y sincroniza aria-expanded.
+   En escritorio el botón está oculto y el menú siempre visible. */
+(function () {
+  var head  = document.querySelector('.site-head');
+  var btn   = document.querySelector('.nav-toggle');
+  var nav   = document.getElementById('site-nav');
+  if (!head || !btn || !nav) return;
+
+  function setOpen(open) {
+    head.setAttribute('data-open', String(open));
+    btn.setAttribute('aria-expanded', String(open));
+  }
+
+  btn.addEventListener('click', function () {
+    setOpen(head.getAttribute('data-open') !== 'true');
+  });
+
+  /* Al navegar a una sección, el menú se cierra. */
+  nav.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  /* Esc cierra; al pasar a escritorio se restablece el estado. */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') { setOpen(false); btn.focus(); }
+  });
+  window.matchMedia('(min-width: 761px)').addEventListener('change', function (e) {
+    if (e.matches) setOpen(false);
+  });
+})();
+</script>
+
+</body>
+</html>
